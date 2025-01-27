@@ -1,0 +1,204 @@
+
+
+/* General HTML and Body Styling */
+html, body {
+  background-color: #1a1f36; /* Darker background for both HTML and body */
+  color: #d0d0d0; /* Light gray text color */
+  font-family: 'Ubuntu Mono', monospace; /* Terminal feel */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  font-size: 1.1rem; /* Slightly larger font size for readability */
+  height: 100%; /* Ensure full height for both html and body */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items from top to bottom */
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
+
+/* Navbar Styling */
+/* navbar css */
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem 2rem; /* Increased padding for more space */
+  background-color: #1a1f36;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 40vw;
+  padding: 0px 30px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding: 10px 15px; /* Increased padding for better clickability */
+  font-size: 1.4rem; /* Further increased font size for visibility */
+  transition: color 0.3s ease;
+}
+
+/* Hover Effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Slightly adjust this value to position it above the bottom */
+  width: 100%; /* Full width of the link */
+  height: 4px; /* Increased height for better visibility */
+  background-color: #ff0000; /* Hover underline color */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff0000;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mobile Menu */
+.navbar .menu-icon {
+  display: none; /* Hidden by default */
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar .logo {
+    margin-right: 5vw;
+  }
+
+  /* Mobile menu toggle */
+  .nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column; /* Stack nav links for mobile view */
+    gap: 1rem;
+    width: 100%;
+    background-color: #1a1f36;
+    position: absolute;
+    top: 80px; /* Adjust the top to appear under the navbar */
+    left: 0;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show links when toggled */
+  }
+
+  .nav-links a {
+    padding: 15px 0; /* Adjust padding for mobile */
+    font-size: 1.2rem; /* Slightly smaller font size for mobile */
+  }
+
+  .menu-icon {
+    display: block; /* Show menu icon on mobile */
+  }
+
+  /* Ensure sections don't overflow */
+  #about, #contact {
+    padding: 15px; /* Less padding for mobile */
+  }
+}
+
+
+/* Main CMD Terminal Section */
+#cmd {
+  padding: 20px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 800px;
+  width: 100%;
+  border: 1px solid #8be9fd;
+  margin-top: 20px;
+  overflow-y: auto; /* Scrollable terminal */
+  background-color: #1a1f36; /* Dark background to match the page */
+}
+
+/* Output Section - where typed commands and responses appear */
+#output {
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+  color: #d0d0d0;
+  font-size: 1.2rem;
+  background-color: #1a1f36; /* Dark background for output */
+}
+
+
+/* Prompt Section */
+.prompt {
+  color: #8be9fd;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Input Field Styling */
+#input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #8be9fd;
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: 'Ubuntu Mono', monospace;
+  caret-color: #ffb86c;
+  transition: all 0.2s ease;
+  font-weight: normal;
+  display: inline-block;
+}
+
+/* Focus effect on input field */
+#input:focus {
+  border: 1px solid #8be9fd;
+  outline: none;
+}
+
+/* Cursor effect on focus */
+#input:focus::after {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 1.5em;
+  background-color: #ffb86c;
+  animation: blink 1s step-end infinite;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  50% {
+    visibility: hidden;
+  }
+}
+
+/* Footer Styling */
+#footer {
+  background-color: #333;
+  color: #d0d0d0;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Hover effect for footer text */
+#footer p:hover {
+  color: #8be9fd;
+}
